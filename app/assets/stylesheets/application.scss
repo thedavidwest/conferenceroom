@@ -1,3 +1,14 @@
+@import url("//fonts.googleapis.com/css?family=Bree+Serif|Abril+Fatface|Satisfy");
+@import "node_modules/normalize.css/normalize";
+@import "bourbon";
+@import "base/base";
+@import "neat";
+@import "vars_mixins_fonts";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "home";
+@import "users";
+@import "calendar";
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

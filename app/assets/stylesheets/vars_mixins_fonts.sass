@@ -1,0 +1,62 @@
+// Colors
+
+$turquoise: #1abc9c
+$dark-turquoise: #16a085
+$greyblue: #34495e
+$dark-greyblue: #2c3e50
+$purple: #9b59b6
+$dark-purple: #8e44ad
+$grey1: #ecf0f1
+$grey2: #bdc3c7
+$grey3: #95a5a6
+$grey4: #7f8c8d
+$black: #1c2834
+$red: #e74c3c
+$dark-red: #c0392b
+$orange: #e67e22
+$dark-orange: #d35400
+$white: #fafafa
+$yellow: #f1c40f
+$dark-yellow: #f39c12
+$green: #2ecc71
+$dark-green: #27ae60
+$blue: #3498db
+$dark-blue: #2980b9
+
+
+// Mixins
+
+=vertical-align
+  position: relative
+  top: 50%
+  -webkit-transform: translateY(-50%)
+  -ms-transform: translateY(-50%)
+  transform: translateY(-50%)
+
+=purple-link
+  color: $dark-purple
+  transition: .3s ease-in-out
+  &:hover
+    color: transparentize($dark-purple, .5)
+
+=red-link
+  color: $red
+  transition: .3s ease-in-out
+  &:hover
+    color: $dark-red
+
+=white-link
+  color: $white
+  transition: .3s ease-in-out
+  &:hover
+    color: $dark-red
+
+=turquoise-link
+  color: $white
+  transition: .3s ease-in-out
+  &:hover
+    color: lighten($turquoise, 25%)
+
+// Google Fonts
+
+@import url("//fonts.googleapis.com/css?family=Roboto:400,900,300,100,700,500|Playfair+Display:400,700italic,900italic,700|Bree+Serif|Pacifico|Crimson+Text:400,600,700|Rokkitt:400,700|Abril+Fatface|Satisfy|Handlee")
