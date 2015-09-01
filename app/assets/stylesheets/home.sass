@@ -1,11 +1,56 @@
+body
+  background: $black
+.alert
+  width: 100%
+  text-align: center
+  background: transparentize($turquoise, .3)
+  color: $white
+  //text-transform: uppercase
+  font:
+    weight: 700
+    size: 24px
+  z-index: 999
+  position: absolute
+  top: 0
+  padding: 20px 0
+
 .home-wrapper
   +display(flex)
   +justify-content(center)
   +align-items(center)
   background: $black
-  height: 100vh
+  min-height: 100vh
   .home-content
     text-align: center
+    margin: 10px 0
+    +outer-container(100%)
+    .res-show
+      background: lighten($black, 5%)
+      padding: 50px
+      input[type=text]
+        border-radius: 0px
+      input[type=hidden]
+        display: none
+      label
+        display: none
+      a
+        color: $turquoise
+        transition: .3s ease-in-out
+        &:hover
+          color: lighten($turquoise, 25%)
+
+      h2
+        padding: 20px 0 10px 0
+    strong
+      color: $turquoise
+    select
+      background: $white
+      border: none
+      text-align: center
+      margin: 10px auto
+
+      option
+        background: $black
 
     h1
       color: $turquoise
@@ -17,6 +62,20 @@
       padding: 0
       @media(max-width: 770px)
         font-size: 40px
+    h2
+      color: $turquoise
+      text-transform: uppercase
+      letter-spacing: .1em
+      line-height: 1
+      margin-bottom: 10px
+      padding: 0
+
+    h3
+      color: $white
+      font-size: 20px
+      text-transform: uppercase
+      letter-spacing: .1em
+      margin-bottom: 10px
     p
       color: $white
       font:
@@ -27,4 +86,13 @@
     .home-btn
       background: $turquoise
       padding: 10px 20px
+      border-radius: 0px
+      font-weight: 700
       +turquoise-link
+
+    .back-btn
+      margin-top: 20px
+      border-radius: 0px
+      font-weight: 700
+      a
+        +turquoise-link

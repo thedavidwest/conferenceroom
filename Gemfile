@@ -18,7 +18,9 @@ gem 'haml', '~> 4.0.7'
 gem 'jade-rails', '~> 1.9.2.0'
 gem 'font-awesome-sass'
 gem 'aws-sdk', '< 2.0'
-
+gem 'simple_form', '~> 3.1.0'
+gem 'jquery-ui-rails'
+gem "combined_time_select", "~> 1.0.1"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -1,0 +1,27 @@
+.home-wrapper
+  .home-content
+    .res-show
+      %p
+        %strong Reserved For:
+        %br
+        = @reservation.name
+      %p
+        %strong Description:
+        %br
+        = @reservation.description
+      %p
+        %strong Reservation Time:
+        %br
+        = @reservation.start_time.strftime("%H:%M%P")
+        \-
+        = @reservation.end_time.strftime("%H:%M%P")
+      %p
+        %strong Conference Room:
+        %br
+        = @reservation.content
+      - if @reservation.user == current_user
+        = link_to 'Edit', edit_reservation_path(@reservation)
+        |
+        = link_to 'Destroy', @reservation, method: :delete, data: { confirm: 'Are you sure?' }
+        |
+      = link_to 'Back', root_path

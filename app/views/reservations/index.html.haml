@@ -1,0 +1,25 @@
+.home-wrapper
+  .home-content
+    - if user_signed_in?
+      #reservations
+        %h3 MillerEgan Reservation Calendar
+        %h2#month
+          = link_to "<", date: @date.prev_month
+          = @date.strftime("%B %Y")
+          = link_to ">", date: @date.next_month
+          %br
+          %h4= link_to "Current Month", reservations_path
+        = calendar @date do |date|
+          = date.day
+          - if @reservations_by_date[date]
+            %ul
+              - @reservations_by_date[date].each do |reservation|
+                %li= link_to reservation.name, reservation
+                \#{reservation.start_time.strftime("%H:%M%P")} - #{reservation.end_time.strftime("%H:%M%P")}
+                \#{reservation.content}
+      = link_to "New Reservation", new_reservation_path, :class => "home-btn"
+      = link_to "Log Out", destroy_user_session_path, method: :delete, :class => "home-btn"
+    - else
+      %h1 Conference Room
+      %p Reserve your spot.
+      = link_to "Sign In", new_user_session_path, :class => "home-btn"

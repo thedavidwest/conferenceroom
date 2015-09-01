@@ -1,10 +1,14 @@
 class ReservationsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :current_user, only: [:edit, :update, :destroy]
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
 
   # GET /reservations
   # GET /reservations.json
   def index
     @reservations = Reservation.all
+    @reservations_by_date = @reservations.group_by(&:published_on)
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 
   # GET /reservations/1
@@ -14,7 +18,7 @@ class ReservationsController < ApplicationController
 
   # GET /reservations/new
   def new
-    @reservation = Reservation.new
+    @reservation = current_user.reservations.build
   end
 
   # GET /reservations/1/edit
@@ -24,7 +28,7 @@ class ReservationsController < ApplicationController
   # POST /reservations
   # POST /reservations.json
   def create
-    @reservation = Reservation.new(reservation_params)
+    @reservation = current_user.reservations.build(reservation_params)
 
     respond_to do |format|
       if @reservation.save
@@ -56,7 +60,7 @@ class ReservationsController < ApplicationController
   def destroy
     @reservation.destroy
     respond_to do |format|
-      format.html { redirect_to reservations_url, notice: 'Reservation was successfully destroyed.' }
+      format.html { redirect_to reservations_url, notice: 'Reservation was successfully deleted.' }
       format.json { head :no_content }
     end
   end
@@ -67,8 +71,13 @@ class ReservationsController < ApplicationController
       @reservation = Reservation.find(params[:id])
     end
 
+    def correct_user
+      @reservation = current_user.reservations.find_by(id: params[:id])
+      redirect_to reservations_path, notice: "Not authorized to edit this reservation" if @reservation.nil?
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def reservation_params
-      params.require(:reservation).permit(:name, :start_at, :description)
+      params.require(:reservation).parse_time_select!(:start_time).parse_time_select!(:end_time).permit(:name, :start_at, :start_time, :description, :published_on, :end_time, :content)
     end
 end

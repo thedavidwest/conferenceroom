@@ -11,15 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150825165325) do
+ActiveRecord::Schema.define(version: 20150901154932) do
 
   create_table "reservations", force: :cascade do |t|
     t.string   "name"
     t.datetime "start_at"
     t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.text     "content"
+    t.date     "published_on"
+    t.integer  "user"
+    t.integer  "user_id"
+    t.datetime "end_time"
+    t.datetime "start_time"
   end
+
+  add_index "reservations", ["user"], name: "index_reservations_on_user"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

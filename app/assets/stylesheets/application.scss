@@ -6,9 +6,11 @@
 @import "vars_mixins_fonts";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "ui";
 @import "home";
 @import "users";
 @import "calendar";
+@import "reservations";
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -21,6 +23,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require jquery.ui.datepicker
  *= require_tree .
  *= require_self
  */
