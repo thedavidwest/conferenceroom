@@ -6,7 +6,7 @@
   %h2 Select Time
   = f.datetime_select :start_time, ampm: true, :combined => true, :minute_interval => 30, :time_separator => "", :start_hour => 8, :start_minute => 00, :end_hour => 17, :end_minute => 00
   = f.datetime_select :end_time, ampm: true, :combined => true, :minute_interval => 30, :time_separator => "", :start_hour => 8, :start_minute => 00, :end_hour => 17, :end_minute => 00
-  %h2 Description
+  %h2 Reservation Details
   = f.input :description
   = f.select :content, ['Large', 'Small'], prompt: 'Conference Room Size'
   = f.button :submit, class: "home-btn"
