@@ -15,18 +15,24 @@ body
   padding: 20px 0
 
 .home-wrapper
-  +display(flex)
-  +justify-content(center)
-  +align-items(center)
+  //+display(flex)
+  //+justify-content(center)
+  //+align-items(center)
   background: $black
   min-height: 100vh
   .home-content
     text-align: center
     margin: 10px 0 25px 0
-    +outer-container(100%)
+    +outer-container(90%)
     .res-show
       background: lighten($black, 5%)
       padding: 50px
+      +span-columns(6)
+      float: none
+      margin: 0 auto
+      text-align: center
+      &:last-child
+        margin-right: auto
       input[type=text]
         border-radius: 0px
       input[type=hidden]
@@ -55,7 +61,7 @@ body
       font-size: 80px
       letter-spacing: .1em
       line-height: 1
-      margin-bottom: 10px
+      margin: 150px 0 10px 0
       padding: 0
       @media(max-width: 770px)
         font-size: 40px
