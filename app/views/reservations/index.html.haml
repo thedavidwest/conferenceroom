@@ -15,7 +15,7 @@
             %ul
               - @reservations_by_date[date].each do |reservation|
                 %li= link_to reservation.name, reservation
-                \#{reservation.start_time.strftime("%H:%M%P")} - #{reservation.end_time.strftime("%H:%M%P")}
+                \#{reservation.start_time.strftime("%I:%M%P")} - #{reservation.end_time.strftime("%I:%M%P")}
                 \#{reservation.content}
       = link_to "New Reservation", new_reservation_path, :class => "home-btn"
       = link_to "Log Out", destroy_user_session_path, method: :delete, :class => "home-btn"
