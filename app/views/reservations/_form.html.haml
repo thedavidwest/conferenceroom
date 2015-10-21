@@ -1,6 +1,6 @@
 = simple_form_for @reservation do |f|
   %h2 Reservation For
-  = f.select :name, [ 'Amanda Prescott', 'Ashley Hopson', 'Jason Forshee', 'Brian Phelps', 'Chip Gage', 'Chris Groves', 'Clay Pulliam', 'Kerry Peterson', 'Luis Zambrano', 'Margarita Coale', 'Michael Colvin', 'Peter Dewar', 'Robert McCormick', 'Robin Hopkins', 'Shane Egan', 'Walt Miller', 'Zoltron' ], prompt: "Select One"
+  = f.select :name, [ 'Amanda Prescott', 'Ashley Hopson', 'Brian Phelps', 'Chip Gage', 'Chris Groves', 'Clay Pulliam', 'Elaine Ross', 'Jason Forshee', 'Kerry Peterson', 'Luis Zambrano', 'Margarita Coale', 'Michael Colvin', 'Peter Dewar', 'Robert McCormick', 'Robin Hopkins', 'Shane Egan', 'Walt Miller', 'Zoltron' ], prompt: "Select One"
   %h2 Select Date
   = f.text_field :published_on, readonly: true
   %h2 Select Time
