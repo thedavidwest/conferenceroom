@@ -47,6 +47,8 @@ body
 
       h2
         padding: 20px 0 10px 0
+      @media(max-width: 880px)
+        +span-columns(12)
     strong
       color: $turquoise
     select
@@ -92,6 +94,8 @@ body
       border-radius: 0px
       font-weight: 700
       +turquoise-link
+      @media(max-width: 660px)
+        margin-top: 20px
 
     .back-btn
       margin-top: 20px

@@ -18,7 +18,20 @@ table
         background: $black
         text-align: center
         color: $turquoise
+  @media(max-width: 880px)
+    +outer-container(100%)
+    th
+      overflow: hidden
+      text-overflow: ellipsis
+      -o-text-overflow: ellipsis
+      white-space: nowrap
+      width: 100%
   tbody
     tr
       td
         border: 1px solid $turquoise
+        overflow: hidden
+        text-overflow: ellipsis
+        -o-text-overflow: ellipsis
+        white-space: nowrap
+        width: 100%

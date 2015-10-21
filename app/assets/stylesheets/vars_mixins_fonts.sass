@@ -1,7 +1,7 @@
 // Colors
 
-$turquoise: #1abc9c
 $dark-turquoise: #16a085
+$turquoise: #1abc9c
 $greyblue: #34495e
 $dark-greyblue: #2c3e50
 $purple: #9b59b6
@@ -45,18 +45,42 @@ $dark-blue: #2980b9
   &:hover
     color: $dark-red
 
-=white-link
-  color: $white
-  transition: .3s ease-in-out
-  &:hover
-    color: $dark-red
-
 =turquoise-link
   color: $white
   transition: .3s ease-in-out
   &:hover
-    color: lighten($turquoise, 25%)
+    color: lighten($black, 25%)
 
-// Google Fonts
+=turquoise-link2
+  color: $black
+  transition: .3s ease-in-out
+  font-weight: 700
+  &:hover
+    color: lighten($black, 25%)
 
-@import url("//fonts.googleapis.com/css?family=Roboto:400,900,300,100,700,500|Playfair+Display:400,700italic,900italic,700|Bree+Serif|Pacifico|Crimson+Text:400,600,700|Rokkitt:400,700|Abril+Fatface|Satisfy|Handlee")
+=white-link
+  color: $white
+  transition: .3s ease-in-out
+  &:hover
+    color: lighten($black, 25%)
+
+=black-link
+  color: $black
+  //transition: .3s ease-in-out
+  &:hover
+    color: lighten($black, 25%)
+
+=main-btn
+  font:
+    weight: 300
+    size: 18px
+  color: $black
+  text-transform: uppercase
+  padding: 10px 20px
+  //border-radius: 2px
+  border: 1px solid $black
+  margin: 0 15px
+  background: $white
+  transition: .3s ease-in-out
+  &:hover
+    background: darken($white, 5%)
