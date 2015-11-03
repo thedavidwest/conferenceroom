@@ -1,13 +1,13 @@
 = simple_form_for @reservation do |f|
   %h2 Reservation For
-  = f.select :name, [ 'No Attorney', 'Amanda Prescott', 'Ashley Hopson', 'Brian Phelps', 'Chip Gage', 'Chris Groves', 'Clay Pulliam', 'Elaine Ross', 'Jason Forshee', 'Kerry Peterson', 'Luis Zambrano', 'Margarita Coale', 'Michael Colvin', 'Peter Dewar', 'Robert McCormick', 'Robin Hopkins', 'Shane Egan', 'Walt Miller', 'Zoltron' ], prompt: "Select One"
+  = f.select :name, ['Amanda Prescott', 'Ashley Hopson', 'Brian Phelps', 'Chip Gage', 'Chris Groves', 'Clay Pulliam', 'Elaine Ross', 'Jason Forshee', 'Kerry Peterson', 'Luis Zambrano', 'Margarita Coale', 'Michael Colvin', 'Peter Dewar', 'Robert McCormick', 'Robin Hopkins', 'Shane Egan', 'Walt Miller', 'Zoltron', 'Chris Carrie', 'Kemp Sawyers', 'Other' ], prompt: "Select One"
   %h2 Select Date
-  = f.text_field :published_on, readonly: true
-  %h2 Select Time
-  = f.datetime_select :start_time, ampm: true, :combined => true, :minute_interval => 30, :time_separator => "", :start_hour => 8, :start_minute => 00, :end_hour => 17, :end_minute => 00
-  = f.datetime_select :end_time, ampm: true, :combined => true, :minute_interval => 30, :time_separator => "", :start_hour => 8, :start_minute => 00, :end_hour => 17, :end_minute => 00
+  = f.text_field :published_on, readonly: true, required: true
+  %h2 Select Start Time
+  = f.datetime_select :start_time, ampm: true, combined: true, minute_interval: 30, time_separator: "", start_hour: 8, start_minute: 00, end_hour: 17, end_minute: 00, required: true
+  = f.datetime_select :end_time, ampm: true, combined: true, minute_interval: 30, time_separator: "", start_hour: 8, start_minute: 30, end_hour: 17, end_minute: 00, required: true
   %h2 Reservation Details
-  = f.input :description
-  = f.select :content, ['Large', 'Small'], prompt: 'Conference Room Size'
+  = f.input :description, required: true
+  = f.select :content, ['Large', 'Small'], prompt: 'Conference Room Size', required: true
   = f.button :submit, class: "home-btn"
   .back-btn= link_to 'Back', reservations_path
