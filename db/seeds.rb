@@ -21,4 +21,4 @@ User.create(name: 'Jason Forshee', email: 'jason.forshee@milleregan.com', passwo
 User.create(name: 'Robert McCormick', email: 'robert.mccormick@milleregan.com', password: 'milleregan')
 User.create(name: 'Peter Dewer', email: 'peter.dewar@milleregan.com', password: 'milleregan')
 User.create(name: 'Brian Phelps', email: 'brian.phelps@milleregan.com', password: 'milleregan')
-User.create(name: 'Margarita Coale', email: 'margarita.coale@milleregan.com', password: 'milleregan')
+
